@@ -4,11 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link to css stylesheet -->-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <!-- Google Fonts (Russo One) -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <!--Description and keywords-->
+    <meta name="description" content="Rock, Paper, Scissor, Games, Online games">
+    <!--Title of the website-->
+    <title>Rock paper scissors</title>
 </head>
 <body>
-    
+    <!--Header text-->
+    <Header>
+        <h1>Rock - Paper - Scissors</h1>
+    </Header>
+    <!--This is the Game-Area-->
+    <section class="game-area"> 
+        <!--Scorebox-->
+        <div class="score-box">
+            <div class="user-score">
+                <h2>Player</h2>
+                <p>0</p>
+            </div>
+            <div class="comp-score">
+                <h2>Computer</h2>
+                <p>0</p>
+            </div>
+        </div>
+        <!--First welcome page with rules and a start play button-->
+        <div class="welcome/rules">
+            <h1>Rock Paper Scissors</h1>
+            <h2>How to play</h2>
+            <button>Play</button>
+        </div>
+        <!--The Game with images and buttons -->
+        <div class="game-play">
+            <h2 class="winner">Choose a weapon</h2>
+            <div class="weapon">
+                <img class="player-wave" src="assets/images/rock.webp" alt="">
+                <img class="computer-wave" src="assets/images/rock.webp" alt="">
+            </div>
+            <div class="options">
+                <buttons class="rock">rock</buttons>
+                <buttons class="paper">paper</buttons>
+                <buttons class="scissors">scissors</buttons>
+            </div>
+        </div>
+    </section>
+
     <script src="script.js"charset="utf-8"></script> 
 </body>
 </html>
