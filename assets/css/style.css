@@ -4,14 +4,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
 }
-
+/*Sets background*/
 section {
     height: 100vh;
-    font-family: 'Russo One', sans-serif;
     background: url("../images/background.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
-
+/*Sets style to score-box*/
 .score-box {
     color: #FFE91F;
     text-align: center;
@@ -28,7 +31,7 @@ section {
     padding: 10px;
     font-size: 25px;
 }
-
+/*Sets style to Welcome section*/
 .welcome {
     background: url("../images/background.webp");
     height: 50vh;
@@ -43,7 +46,7 @@ section {
 
 }
 
-.welcome button .game-play button  {
+.welcome button {
     width: 150px;
     height: 50px;
     background: none;
@@ -56,26 +59,32 @@ section {
     cursor: pointer;
     
 }
-
+/*Sets style to the players*/
 .game-play {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+/*Sets style to the result message*/
 .winner{
     color: #FFE91F;
     text-align:center;
     font: 55px;
 }
-
-.weapon,
+/*Sets style to the player and computer hand*/
+.weapon {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/*Sets style to the diffrent picture options to play*/
 .options {
     display:flex;
     justify-content: space-around;
     align-items: center;
 }
-
+/*Sets style to fade out and fade in for different sides in the game*/
 div.fadeout{
     opacity: 0;
     pointer-events: none;
