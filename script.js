@@ -1,4 +1,4 @@
-const match = () => {
+const theGame = () => {
     let playerScore =0;
     let compScore =0;
 
@@ -13,8 +13,30 @@ const match = () => {
         });
     }; 
 
+    const playGame = () => {
+        const choices = document.querySelectorAll('.choices button');
+        const plahand = document.querySelector('.player-wave');
+        const comphand = document.querySelector('.computer-wave');
+
+        //**Computers random choices*/
+        const compchoices = ['rock', 'paper', 'scissors'];
+
+        choices.forEach(choice=>{
+            choice.addEventListener('click', function() {
+
+                const randomComp = Math.floor(Math.random() * 3);
+                const choiseComp = compchoices[randomComp];
+            });
+        });
+
+
+        
+        
+        };
+
     startG();
+    playGame();
     
 };
 
-match();
+theGame();
