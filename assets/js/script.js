@@ -34,11 +34,11 @@ const theGame = () => {
                 const randomComp = Math.floor(Math.random() * 3);
                 const choiceComp = compChoices[randomComp]; 
 
-                
+                setTimeout(() =>{ 
                     compareWeapons(this.textContent.trim(), choiceComp);
                     playHand.src = `../assets/images/${this.textContent.trim()}.webp`;
                     compHand.src = `../assets/images/${choiceComp.trim()}.webp`;
-               
+                }, 2000);
 
                 playHand.style.animation ='userShake 2s ease';
                 compHand.style.animation ='compShake 2s ease';
