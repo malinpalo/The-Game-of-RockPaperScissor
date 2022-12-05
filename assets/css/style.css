@@ -6,13 +6,15 @@
     box-sizing: border-box;
     font-family: 'Russo One', sans-serif;
 }
-/*Sets background*/
+/*Sets the background*/
 section {
     height: 100vh;
-    background: url("../images/background.webp");
+    background: url("../images/background/background.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: #FFE91F;
+    font-family: 'Russo One', sans-serif;
 }
 /*Sets style to score-box*/
 .score-box {
@@ -33,7 +35,7 @@ section {
 }
 /*Sets style to Welcome section*/
 .welcome {
-    background: url("../images/background.webp");
+    background: url("../images/background/background.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -46,12 +48,12 @@ section {
     
 }
 .welcome h1 {
-    font-size: 55px;
+    font-size: 50px;
     color: #FFE91F
 
 }
 
-.welcome button:hover {
+.welcome button {
     width: 150px;
     height: 50px;
     background: none;
@@ -60,10 +62,7 @@ section {
     font-size: 20px;
     background: #B534D2;
     border-radius: 3px;
-    font-family: 'Russo One', sans-serif;
-    cursor: pointer;
-    
-    
+    cursor: pointer;   
 }
 /*Sets style to the players*/
 .game-play {
@@ -83,7 +82,7 @@ section {
 .weapon {
     display:flex;
     justify-content: space-around;
-    align-items: center;
+    
 }
 /*Sets style to the diffrent buttons to play*/
 .choices {
@@ -92,7 +91,7 @@ section {
     align-items: center;
 }
 
-.choices button:hover {
+.choices button {
     width: 150px;
     height: 50px;
     background: none;
@@ -101,7 +100,6 @@ section {
     font-size: 20px;
     background: #B534D2;
     border-radius: 3px;
-    font-family: 'Russo One', sans-serif;
     cursor: pointer;
 }
 /*Sets style to fade out and fade in for different screens in the game*/
