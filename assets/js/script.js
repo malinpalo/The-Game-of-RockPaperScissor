@@ -1,7 +1,8 @@
-/**Variables created in the Global scope*/
+/**Function to start the game*/
 const theGame = () => {
-    let playerScore =0;
-    let compScore =0;
+    /**Declaring global Variables to update the scoreboard */
+    let playerScore = 0;
+    let compScore = 0;
     /**The welcome page that starts the game*/
     const startG = () => {
         const startBtn = document.querySelector('.welcome button');
@@ -26,13 +27,20 @@ const theGame = () => {
                 const randomComp = Math.floor(Math.random() * 3);
                 const choiceComp = compChoices[randomComp]; 
 
-                compareWeapons(this.textContent, choiceComp.trim());
+                compareWeapons(this.textContent.trim(), choiceComp);
                 playHand.src = `../assets/images/${this.textContent.trim()}.webp`;
                 compHand.src = `../assets/images/${choiceComp.trim()}.webp`;
             });
         });
     };
-
+    /**Updates the scoreboard*/
+    const score = () =>{
+        const userScore = document.querySelector('.user-score p');
+        const computerScore = document.querySelector('.comp-score p');
+        userScore.textContent = playerScore;
+        computerScore.textContent = compScore;
+    }
+    /**Compares player and computer hands and increments the options by one for each round played */
     const compareWeapons = (choicePlayer, choiceComp) =>{
         const winLose = document.querySelector('.winlose');
 
@@ -44,9 +52,13 @@ const theGame = () => {
         if(choicePlayer === 'rock'){
             if(choiceComp === 'scissors'){
                 winLose.textContent = 'Yeay, you win!'
+                playerScore++;
+                score();
                 return;
             }else{
                 winLose.textContent = 'Buuhu, you lost!';
+                compScore++;
+                score();
                 return;
             };
         };
@@ -54,9 +66,13 @@ const theGame = () => {
         if(choicePlayer === 'paper'){
             if(choiceComp === 'scissors'){
                 winLose.textContent = 'Buuhu, you lost!'
+                compScore++;
+                score();
                 return;
             }else{
                 winLose.textContent = 'Yeay, you win!';
+                playerScore++;
+                score();
                 return;
             };
         };
@@ -64,9 +80,13 @@ const theGame = () => {
         if(choicePlayer === 'scissors'){
             if(choiceComp === 'rock'){
                 winLose.textContent = 'Buuhu, you lost!'
+                compScore++;
+                score();
                 return;
             }else{
                 winLose.textContent = 'Yeay, you win!';
+                playerScore++;
+                score();
                 return;
             }
         }
