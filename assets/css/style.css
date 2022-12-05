@@ -79,7 +79,7 @@ section {
     font: 55px;
 }
 /*Sets style to the player and computer hand*/
-.weapon {
+.weapons {
     display:flex;
     justify-content: space-around;
     

@@ -20,6 +20,13 @@ const theGame = () => {
         const choices = document.querySelectorAll('.choices button');
         const playHand = document.querySelector('.player-wave');
         const compHand = document.querySelector('.computer-wave');
+        const weapons = document.querySelectorAll('.weapons img');
+
+        weapons.forEach(weapon => {
+            weapon.addEventListener('animationend', function(){
+                this.style.animation = '';
+            });
+        })
         //**Computers random choices*/
         const compChoices = ['rock', 'paper', 'scissors'];
         choices.forEach(choice => {
@@ -27,9 +34,11 @@ const theGame = () => {
                 const randomComp = Math.floor(Math.random() * 3);
                 const choiceComp = compChoices[randomComp]; 
 
-                compareWeapons(this.textContent.trim(), choiceComp);
-                playHand.src = `../assets/images/${this.textContent.trim()}.webp`;
-                compHand.src = `../assets/images/${choiceComp.trim()}.webp`;
+                
+                    compareWeapons(this.textContent.trim(), choiceComp);
+                    playHand.src = `../assets/images/${this.textContent.trim()}.webp`;
+                    compHand.src = `../assets/images/${choiceComp.trim()}.webp`;
+               
 
                 playHand.style.animation ='userShake 2s ease';
                 compHand.style.animation ='compShake 2s ease';
