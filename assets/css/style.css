@@ -92,13 +92,13 @@ body {
     
 }
 /*Sets style to the diffrent buttons to play*/
-.choices {
+.player-choices {
     display:flex;
     justify-content: space-evenly;
     justify-items: center;
 }
 
-.choices button {
+.player-choices button {
     flex-basis: 100%;
     margin: 1rem;
     width: 8rem;
@@ -113,15 +113,20 @@ body {
 }
 
 .play-again {
-    width: 10rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14rem;
     height: 4rem;
     background: none;
-    border: none;   
+    border: none;
     color: #FFE91F;
     font-size: 2rem;
     background: #B534D2;
     border-radius: 0.5rem;
-    cursor: pointer; 
+    cursor: pointer;
+    
 } 
 /*Sets style to fade out and fade in for different screens in the game*/
 div.fadeOut{

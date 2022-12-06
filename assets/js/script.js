@@ -4,7 +4,7 @@ const theGame = () => {
     let playerScore = 0;
     let compScore = 0;
     let rounds = 0;
-    const winLose = document.querySelector('.winlose');
+    
     /**The welcome page that starts the game and fades out into the game area*/
     const startG = () => {
         const startBtn = document.querySelector('.welcome button');
@@ -19,7 +19,7 @@ const theGame = () => {
     //**Functions that makes the game play*/
     //*Declearing variables*//
     const playGame = () => {
-        const choices = document.querySelectorAll('.choices button');
+        const choices = document.querySelectorAll('.player-choices button');
         const playHand = document.querySelector('.player-wave');
         const compHand = document.querySelector('.computer-wave');
         const weapons = document.querySelectorAll('.weapons img');
@@ -29,7 +29,7 @@ const theGame = () => {
                 this.style.animation = '';
             });
         })
-        //**Function to start the play */
+        //**Function that sets the computers choices, rounds left, and time delay */
         const compChoices = ['rock', 'paper', 'scissors'];
         choices.forEach(choice => {
             choice.addEventListener('click', function() {
@@ -65,6 +65,7 @@ const theGame = () => {
     }
     /**Compares player and computer hands and increments the options by one for each round played */
     const compareWeapons = (choicePlayer, choiceComp) =>{
+        const winLose = document.querySelector('.winlose');
 
         if(choicePlayer === choiceComp){
             winLose.textContent = 'Oh, it is a tie';
@@ -118,8 +119,10 @@ const theGame = () => {
  */
     const gameOver = (choices, roundsLeft) => {
 
-    const chooseRound = document.querySelector('.round');
-    const playagainButton = document.querySelector('.play-again');
+
+      const chooseRound = document.querySelector('.round');
+      const playagainButton = document.querySelector('.play-again');
+      const winLose = document.querySelector('.winlose');
     
       choices.forEach(choice => {
         choice.style.display = 'none';
@@ -130,21 +133,21 @@ const theGame = () => {
     
       if (playerScore > compScore) {
         winLose.style.fontSize = '2rem';
-        winLose.innerText = 'Tjohoo!! You won!';
+        winLose.textContent = 'Tjohoo!! You won!';
         winLose.style.color = '#B534D2';
       } else if (playerScore < compScore) {
         winLose.style.fontSize = '2rem';
-        winLose.innerText = 'To bad, you lost!';
+        winLose.textContent = 'To bad, you lost!';
         winLose.style.color = '#B534D2';
       } else {
         winLose.style.fontSize = '2rem';
-        winLose.innerText = 'Tie';
+        winLose.textContent = 'Tie';
         winLose.style.color = '#B534D2';
       }
       playagainButton.innerText = 'Play again?';
       playagainButton.style.display = 'flex';
       playagainButton.addEventListener('click', () => {
-          window.location.play-again();
+          window.location.reload();
       });
   };
     
