@@ -133,7 +133,7 @@ const theGame = () => {
         choice.style.display = 'none';
       });
     
-      chooseRound.innerText = 'Game over!';
+      chooseRound.textContent = 'Game over!';
       roundsLeft.style.display = 'none';
       weapons.style.display = 'none';
 
@@ -152,9 +152,10 @@ const theGame = () => {
         winLose.textContent = 'Tie';
         winLose.style.color = '#B534D2';
       }
-      playagainButton.textContent = 'Play again?';
+      playagainButton.texContent = 'Play again?';
+      playagainButton.style.display ='flex';
       playagainButton.addEventListener('click', () => {
-          window.location.reload();
+        window.location.reload();
       });
   };
     
