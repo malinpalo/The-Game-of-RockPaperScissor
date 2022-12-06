@@ -48,6 +48,10 @@ const theGame = () => {
 
                 playHand.style.animation ='userShake 2s ease';
                 compHand.style.animation ='compShake 2s ease';
+                
+               
+                
+                
                 //**The game ends after 5 rounds */
                 if(rounds === 5) {
                     gameOver(choices, roundsLeft);
@@ -123,18 +127,22 @@ const theGame = () => {
       const chooseRound = document.querySelector('.round');
       const playagainButton = document.querySelector('.play-again');
       const winLose = document.querySelector('.winlose');
-    
+      const weapons = document.querySelectorAll('.weapons img');
+      
       choices.forEach(choice => {
         choice.style.display = 'none';
       });
     
       chooseRound.innerText = 'Game over!';
       roundsLeft.style.display = 'none';
+      weapons.style.display = 'none';
+
     
       if (playerScore > compScore) {
         winLose.style.fontSize = '2rem';
         winLose.textContent = 'Tjohoo!! You won!';
         winLose.style.color = '#B534D2';
+        
       } else if (playerScore < compScore) {
         winLose.style.fontSize = '2rem';
         winLose.textContent = 'To bad, you lost!';
@@ -144,8 +152,7 @@ const theGame = () => {
         winLose.textContent = 'Tie';
         winLose.style.color = '#B534D2';
       }
-      playagainButton.innerText = 'Play again?';
-      playagainButton.style.display = 'flex';
+      playagainButton.textContent = 'Play again?';
       playagainButton.addEventListener('click', () => {
           window.location.reload();
       });
