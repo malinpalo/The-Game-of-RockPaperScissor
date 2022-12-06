@@ -93,9 +93,10 @@ body {
     justify-content: space-evenly;
     padding: 5rem;
     height: 40vh;
-    width: 100%;
-    
-    
+    width: 100%;    
+}
+.computer-wave {
+    transform: rotateY(180deg);
 }
 /*Sets style to the diffrent buttons to play*/
 .player-choices {
