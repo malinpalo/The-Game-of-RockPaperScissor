@@ -3,7 +3,8 @@ const theGame = () => {
     /**Declaring global Variables to update the scoreboard */
     let playerScore = 0;
     let compScore = 0;
-    /**The welcome page that starts the game*/
+    let rounds = 0;
+    /**The welcome page that starts the game and fades out into the game area*/
     const startG = () => {
         const startBtn = document.querySelector('.welcome button');
         const welcomeScreen = document.querySelector('.welcome');
@@ -27,10 +28,14 @@ const theGame = () => {
                 this.style.animation = '';
             });
         })
-        //**Computers random choices*/
+        //**Function to start the play */
         const compChoices = ['rock', 'paper', 'scissors'];
         choices.forEach(choice => {
             choice.addEventListener('click', function() {
+                const roundsLeft = document.querySelector('.rounds-left'); 
+                rounds++;
+                roundsLeft.innerText = `Rounds Left: ${5-rounds}`;
+                //**Computers random choise */
                 const randomComp = Math.floor(Math.random() * 3);
                 const choiceComp = compChoices[randomComp]; 
 
@@ -42,6 +47,10 @@ const theGame = () => {
 
                 playHand.style.animation ='userShake 2s ease';
                 compHand.style.animation ='compShake 2s ease';
+
+                if(rounds === 5) {
+                    gameOver(choices, roundsLeft);
+                  }
            
             });
         });
