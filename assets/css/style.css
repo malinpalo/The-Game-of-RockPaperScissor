@@ -75,6 +75,12 @@ body {
     transition: opacity 0.5s ease 0.8s;
     
 }
+/*Styles the rounds-left*/
+.rounds-left {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
 /*Sets style to the result message*/
 .winlose{
     color: #FFE91F;
