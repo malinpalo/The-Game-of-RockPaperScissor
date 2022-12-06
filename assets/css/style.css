@@ -111,6 +111,18 @@ body {
     border-radius: 0.5rem;
     cursor: pointer;
 }
+
+.play-again {
+    width: 10rem;
+    height: 4rem;
+    background: none;
+    border: none;   
+    color: #FFE91F;
+    font-size: 2rem;
+    background: #B534D2;
+    border-radius: 0.5rem;
+    cursor: pointer; 
+} 
 /*Sets style to fade out and fade in for different screens in the game*/
 div.fadeOut{
     opacity: 0;

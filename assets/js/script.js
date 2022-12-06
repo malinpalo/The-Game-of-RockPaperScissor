@@ -4,6 +4,7 @@ const theGame = () => {
     let playerScore = 0;
     let compScore = 0;
     let rounds = 0;
+    const winLose = document.querySelector('.winlose');
     /**The welcome page that starts the game and fades out into the game area*/
     const startG = () => {
         const startBtn = document.querySelector('.welcome button');
@@ -38,7 +39,7 @@ const theGame = () => {
                 //**Computers random choise */
                 const randomComp = Math.floor(Math.random() * 3);
                 const choiceComp = compChoices[randomComp]; 
-
+                //**Sets delay on compare Weapons */
                 setTimeout(() =>{ 
                     compareWeapons(this.textContent.trim(), choiceComp);
                     playHand.src = `../assets/images/${this.textContent.trim()}.webp`;
@@ -47,7 +48,7 @@ const theGame = () => {
 
                 playHand.style.animation ='userShake 2s ease';
                 compHand.style.animation ='compShake 2s ease';
-
+                //**The game ends after 5 rounds */
                 if(rounds === 5) {
                     gameOver(choices, roundsLeft);
                   }
@@ -64,7 +65,6 @@ const theGame = () => {
     }
     /**Compares player and computer hands and increments the options by one for each round played */
     const compareWeapons = (choicePlayer, choiceComp) =>{
-        const winLose = document.querySelector('.winlose');
 
         if(choicePlayer === choiceComp){
             winLose.textContent = 'Oh, it is a tie';
@@ -112,7 +112,41 @@ const theGame = () => {
                 return;
             }
         }
+      };
+      /**
+ * Runs when game is over
+ */
+    const gameOver = (choices, roundsLeft) => {
+
+    const chooseRound = document.querySelector('.round');
+    const playagainButton = document.querySelector('.play-again');
+    
+      choices.forEach(choice => {
+        choice.style.display = 'none';
+      });
+    
+      chooseRound.innerText = 'Game over!';
+      roundsLeft.style.display = 'none';
+    
+      if (playerScore > compScore) {
+        winLose.style.fontSize = '2rem';
+        winLose.innerText = 'Tjohoo!! You won!';
+        winLose.style.color = '#B534D2';
+      } else if (playerScore < compScore) {
+        winLose.style.fontSize = '2rem';
+        winLose.innerText = 'To bad, you lost!';
+        winLose.style.color = '#B534D2';
+      } else {
+        winLose.style.fontSize = '2rem';
+        winLose.innerText = 'Tie';
+        winLose.style.color = '#B534D2';
       }
+      playagainButton.innerText = 'Play again?';
+      playagainButton.style.display = 'flex';
+      playagainButton.addEventListener('click', () => {
+          window.location.play-again();
+      });
+  };
     
     //**Calls the functions for the game */
     startG();
