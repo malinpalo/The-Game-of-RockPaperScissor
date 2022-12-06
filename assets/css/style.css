@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-/*Removes default style*/
+/*Removes default style and sets the font-family*/
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +7,16 @@
     font-family: 'Russo One', sans-serif;
 }
 /*Sets the background*/
-section {
+body {
     height: 100vh;
     background: url("../images/background/background.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     color: #FFE91F;
-    font-family: 'Russo One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /*Sets style to score-box*/
 .score-box {
@@ -26,12 +28,12 @@ section {
     align-items: center;
 }
 .score-box h2 {
-    font-size: 30px;
+    font-size: 2rem;
 }
 .score-box p {
     text-align: center;
-    padding: 10px;
-    font-size: 25px;
+    padding: 1rem;
+    font-size: 2rem;
 }
 /*Sets style to Welcome section*/
 .welcome {
@@ -54,14 +56,14 @@ section {
 }
 
 .welcome button {
-    width: 150px;
-    height: 50px;
+    width: 10rem;
+    height: 4rem;
     background: none;
     border: none;   
     color: #FFE91F;
-    font-size: 20px;
+    font-size: 2rem;
     background: #B534D2;
-    border-radius: 3px;
+    border-radius: 0.5rem;
     cursor: pointer;   
 }
 /*Sets style to the players*/
